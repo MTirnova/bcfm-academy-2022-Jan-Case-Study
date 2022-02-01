@@ -11,7 +11,7 @@ def index():
 def temperature_api():
     apikey = os.getenv("API_KEY","Error")
     city=request.args.get("city")
-    base_url= requests.get(f'https://api.openweathermap.org/data/2.5/weather?q='+city+'&mode=json&lang=tr&units=metric&appid='+config.apikey)
+    base_url= requests.get(f'https://api.openweathermap.org/data/2.5/weather?q='+city+'&mode=json&lang=tr&units=metric&appid='+apikey)
     weatherData=base_url.json()
     temp= weatherData['main']['temp']
     return jsonify(temperature=temp),200
