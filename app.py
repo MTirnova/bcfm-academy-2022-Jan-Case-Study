@@ -3,7 +3,7 @@ import requests
 import json
 import os
 app=Flask(__name__)
-@app.route("/")
+@app.route("/",methods=['GET'])
 def index():
     return jsonify(firstname="Mustafa",lastname="TIRNOVA"),200
 
@@ -13,11 +13,13 @@ def temperature_api():
     city=request.args.get("city")
     base_url= requests.get(f'https://api.openweathermap.org/data/2.5/weather?q='+city+'&mode=json&lang=tr&units=metric&appid='+apikey)
     weatherData=base_url.json()
-    temp= weatherData['main']['temp']
-    return jsonify(temperature=temp),200
+    if weatherData['cod']=="404":
+        return jsonify(message="City Not Found"),404
+    else:
+        temp= weatherData['main']['temp']
+        return jsonify(temperature=temp),200
 
-    
-
+     
 if __name__=="__main__":
     app.run(host="0.0.0.0", port=int("5000"), debug=True)
     
