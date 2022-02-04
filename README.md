@@ -4,10 +4,10 @@ Geliştirmiş olduğum uygulamayı containerize etmek için ilk olarak Dockerfil
 Ek olarak dosyalarımın arasında bir de "requirements.txt" isimli bir dosya bulunmaktadır. Bu dosyada containerın çalışması için gerekli gereksinimler yer almaktadır. Bu gereksinimler, Dockerfile dosyası build aşamasındayken ilgili sisteme çekilir.
 
 ## Build İşlemi
-Ardından sıra bu Dockerfile dosyasını build etme aşamasına geldi. Dosyayı build etmem için "docker image build -t mustafatirnova/bcfmcasestudy:v1 ." komutunu kullanmam yeterli olcaktır. Bu komutu Dockerfile dosyamın bulunduğu dizindeyken çalıştırdığımda bana "mustafatirnova/bcfmcasestudy:v1" isimli bir image oluşturacaktır.
+Ardından sıra bu Dockerfile dosyasını build etme aşamasına geldi. Dosyayı build etmem için ```docker image build -t mustafatirnova/bcfmcasestudy:v1 .``` komutunu kullanmam yeterli olcaktır. Bu komutu Dockerfile dosyamın bulunduğu dizindeyken çalıştırdığımda bana "mustafatirnova/bcfmcasestudy:v1" isimli bir image oluşturacaktır.
 
 ## Uygulamanın Container içerisinde Çalıştırılması
-Image oluşturulduktan sonra ise, uygulamanın bir container içerisinde çalışmasını sağlamak için "docker container run --name bcfmcasestudy -p 80:5000 --env API_KEY=apikey mustafatirnova/bcfmcasestudy:v1" komutunu kullanmamız yeterlidir. Bu komut sayesinde uygulamamız containerize edilmiş hale gelip çalışmaya başlamaktadır. Burada ki önemli nokta containerı oluştururken containerımızın yayın yapacağı ilgili portu aktif hale getirmek ve kullanmış olduğumuz api servisinin vermiş olduğu apikey'i environment variables olarak eklemektir.
+Image oluşturulduktan sonra ise, uygulamanın bir container içerisinde çalışmasını sağlamak için ```docker container run --name bcfmcasestudy -p 80:5000 --env API_KEY=apikey mustafatirnova/bcfmcasestudy:v1``` komutunu kullanmamız yeterlidir. Bu komut sayesinde uygulamamız containerize edilmiş hale gelip çalışmaya başlamaktadır. Burada ki önemli nokta containerı oluştururken containerımızın yayın yapacağı ilgili portu aktif hale getirmek ve kullanmış olduğumuz api servisinin vermiş olduğu apikey'i environment variables olarak eklemektir.
 
 ## AWS EC2 kullanarak containerı dış dünyaya açma
 Bunun için ilk olarak bir AWS üyeliği oluşturdum, ardından EC2 servisinin altında yeni bir EC2
@@ -15,8 +15,8 @@ instance oluşturup, burada containerımı çalıştıracağım sisteme Linux bi
 gerçekleştirdim. Gerekli grup security ayarlarınıda yaptıktan sonra açılan bu sanal makinaya
 oluşturduğum bir keypair yardımıyla bağlantı kurdum. Bunun içerisine docker kurulumu
 gerçekleştirdim. Ardından GithubAction sayesinde DockerHub’a push ettiğim image dosyasını
-çalıştırmak istedim. Bunun için ise “docker run --name casestudy -p 80:5000 --env
-API_KEY=apikeyvalue mustafatirnova/bcfmcasestudy:v1” bu komutu
+çalıştırmak istedim. Bunun için ise ```docker run --name casestudy -p 80:5000 --env
+API_KEY=apikeyvalue mustafatirnova/bcfmcasestudy:v1``` bu komutu
 çalıştırdım ve yazmış olduğum uygulamanın bir container halinde başarılı bir şekilde çalıştığını
 gözlemlemiş oldum.
 
