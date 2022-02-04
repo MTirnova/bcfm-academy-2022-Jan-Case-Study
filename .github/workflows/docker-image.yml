@@ -21,7 +21,7 @@ jobs:
         docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
     - uses: actions/checkout@v2
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag mustafatirnova/bcfmcasestudy:v1
+      run: docker build . --file Dockerfile --tag mustafatirnova/bcfmcasestudy:latest
     - name: docker push
       run: |
-        docker push mustafatirnova/bcfmcasestudy:v1
+        docker push mustafatirnova/bcfmcasestudy:latest
