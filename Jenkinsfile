@@ -12,3 +12,4 @@ node {
         sh 'docker run --name casestudy -d -p 80:5000 --env API_KEY=apikeyvalue mustafatirnova/bcfmcasestudy:latest'
     }
 }
+
