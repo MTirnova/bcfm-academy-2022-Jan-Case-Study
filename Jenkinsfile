@@ -9,7 +9,7 @@ node {
         sh 'docker pull mustafatirnova/bcfmcasestudy:latest'
     }
     stage('Run Container') {
-        sh 'docker run --name casestudy -d -p 80:5000 --env API_KEY=apikeyvalue mustafatirnova/bcfmcasestudy:latest'
+        sh 'docker run --name casestudy -d -p 5000:5000 --env API_KEY=apikeyvalue mustafatirnova/bcfmcasestudy:latest'
     }
 }
 
