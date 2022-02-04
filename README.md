@@ -4,7 +4,7 @@ Geliştirmiş olduğum uygulamayı containerize etmek için ilk olarak Dockerfil
 Ek olarak dosyalarımın arasında bir de "requirements.txt" isimli bir dosya bulunmaktadır. Bu dosyada containerın çalışması için gerekli gereksinimler yer almaktadır. Bu gereksinimler, Dockerfile dosyası build aşamasındayken ilgili sisteme çekilir.
 
 ## Build İşlemi
-Ardından sıra bu Dockerfile dosyasını build etme aşamasına geldi. Dosyayı build etmem için ```docker image build -t mustafatirnova/bcfmcasestudy:latest .``` komutunu kullanmam yeterli olcaktır. Bu komutu Dockerfile dosyamın bulunduğu dizindeyken çalıştırdığımda bana ```mustafatirnova/bcfmcasestudy:latest``` isimli bir image oluşturacaktır.
+Ardından sıra bu Dockerfile dosyasını build etme aşamasına geldi. Dosyayı build etmem için ```docker image build -t mustafatirnova/bcfmcasestudy:latest .``` komutunu kullanmam yeterli olacaktır. Bu komutu Dockerfile dosyamın bulunduğu dizindeyken çalıştırdığımda bana ```mustafatirnova/bcfmcasestudy:latest``` isimli bir image oluşturacaktır.
 
 ## Uygulamanın Container içerisinde Çalıştırılması
 Image oluşturulduktan sonra ise, uygulamanın bir container içerisinde çalışmasını sağlamak için ```docker container run --name bcfmcasestudy -d -p 5000:5000 --env API_KEY=apikey mustafatirnova/bcfmcasestudy:latest``` komutunu kullanmamız yeterlidir. Bu komut sayesinde uygulamamız containerize edilmiş hale gelip çalışmaya başlamaktadır. Burada ki önemli nokta containerı oluştururken containerımızın yayın yapacağı ilgili portu aktif hale getirmek ve kullanmış olduğumuz api servisinin vermiş olduğu apikey'i environment variables olarak eklemektir.
@@ -45,7 +45,7 @@ http://ec2-54-167-197-44.compute-1.amazonaws.com/temperature?city=istanbul
 
 ![ec2postmangecersiz](https://user-images.githubusercontent.com/88968436/152524612-f1d41aef-f2c7-46a2-ba0a-3e4fccdce2a5.jpg)
 
-## KAYNAKLAR
+## YARDIM ALDIĞIM KAYNAKLAR
 
 https://www.udemy.com/course/adan-zye-docker/
 
