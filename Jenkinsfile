@@ -1,3 +1,4 @@
+##Aşağıdaki komutlar instance üzerinde kurulu olan Jenkins de pipeline olarak çalışmaktadır.
 node {
     stage('Stop and Delete Container') {
         sh 'docker rm -f casestudy'
