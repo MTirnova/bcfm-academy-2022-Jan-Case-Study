@@ -29,6 +29,6 @@ jobs:
       uses: appleboy/jenkins-action@master
       with:
         url: "http://ec2-54-196-162-103.compute-1.amazonaws.com:8080"
-        user: "mtirnova"
+        user: "mustafatirnova"
         token: ${{ secrets.TOKEN }}
         job: "app-deploy"
