@@ -32,11 +32,6 @@ location / {
 ```
 bu kod yardımıyla yönlendirme gerçekleştirdim. Ardından yapmış olduğum testler ile de container içerisinde çalışan uygulamamın başarı ile çalıştığını gözlemiş oldum.
 
-Uygulama erişim Linkleri;
-
-http://ec2-54-167-197-44.compute-1.amazonaws.com/
-
-http://ec2-54-167-197-44.compute-1.amazonaws.com/temperature?city=istanbul
 
 ## ÇALIŞTIRILAN UYGULAMANIN POSTMAN DENEMELERİ
 ![ec2postmanisim](https://user-images.githubusercontent.com/88968436/152524575-9b5a4676-eb41-47d2-a2c2-b8ea665f29d0.jpg)
